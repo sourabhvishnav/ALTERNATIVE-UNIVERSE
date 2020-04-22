@@ -3,6 +3,9 @@ var sun,mercury,venus,earth,mars,jupiter;
 var sun_image,mercury_image,venus_image,earth_image,mars_image,
     jupiter_image;
 
+var angle;
+var angleSpeed;
+
 
  function preload (){
    
@@ -17,10 +20,13 @@ var sun_image,mercury_image,venus_image,earth_image,mars_image,
 function setup() {
   createCanvas(500, 500);
   
+  angle  =0;
+  angleSpeed = 0.8;
+
   sun = createSprite(250,250,5,5);
   sun.addImage("sun",sun_image);
   sun.scale = 0.2;
-  
+
   mercury = createSprite(250,430,2,2);
   mercury.addImage("mercury",mercury_image);
   mercury.scale = 0.3;
@@ -41,19 +47,25 @@ function setup() {
   jupiter.addImage("jupiter",jupiter_image);
   jupiter.scale = 0.4;
   
-  
 }
 
 function draw() {
-  background(250);
+  background(0);
   
     sun.debug =  true;
-  sun.setCollider("circle",-5,0,150);
-  
+    sun.setCollider("circle",-5,0,150);
+
   if(frameCount%40===0){
     sun.scale = sun.scale+0.05;
   }
   
+  
+  translate(width/25,height/25);
+  rotate(angle);
+
+ angle = angle + angleSpeed
+
+
   jupiter.debug = true;
   jupiter.setCollider("circle",0,0,120);
   
@@ -66,6 +78,7 @@ function draw() {
   venus.debug = true;
   venus.setCollider("circle",0,-50,190);
   
+
   mercury.debug = true;
   mercury.setCollider("circle",0,0,160);
   
@@ -120,4 +133,5 @@ function draw() {
   jupiter.addImage("jupiter",jupiter_image);
   jupiter.scale = 0.4;
   
+   
  }
