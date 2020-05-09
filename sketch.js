@@ -18,32 +18,32 @@ var angleSpeed;
  } 
    
 function setup() {
-  createCanvas(500, 500);
+  createCanvas(800, 670);
   
   angle  =0;
   angleSpeed = 0.8;
 
-  sun = createSprite(250,250,5,5);
+  sun = createSprite(0,0,5,5);
   sun.addImage("sun",sun_image);
   sun.scale = 0.2;
 
-  mercury = createSprite(250,430,2,2);
+  mercury = createSprite(10,80,2,2);
   mercury.addImage("mercury",mercury_image);
   mercury.scale = 0.3;
   
-  venus = createSprite(80,300,5,5);
+  venus = createSprite(120,200,5,5);
   venus.addImage("venus",venus_image);
   venus.scale = 0.2;
   
-  earth = createSprite(180,110,5,5);
+  earth = createSprite(180,80,5,5);
   earth.addImage("earth",earth_image);
   earth.scale = 0.1;
   
-  mars = createSprite(380,125,5.5);
+  mars = createSprite(0,175,5.5);
   mars.addImage("mars",mars_image);
   mars.scale = 0.150
   
-  jupiter = createSprite(430,340,5,5);
+  jupiter = createSprite(245,0,5,5);
   jupiter.addImage("jupiter",jupiter_image);
   jupiter.scale = 0.4;
   
@@ -55,12 +55,12 @@ function draw() {
     sun.debug =  true;
     sun.setCollider("circle",-5,0,150);
 
-  if(frameCount%40===0){
+  if(frameCount%38===0){
     sun.scale = sun.scale+0.05;
   }
   
   
-  translate(width/25,height/25);
+  translate(width/2,height/2);
   rotate(angle);
 
  angle = angle + angleSpeed
@@ -98,38 +98,38 @@ function draw() {
     mars.destroy();
   }
   
-  if(frameCount%730===0){
+  if(frameCount%970===0){
    sun.destroy();
   }
   
-  if(frameCount%740===0){
+  if(frameCount%970===0){
     reset();
   }
   
   drawSprites();
 }
  function reset(){
-   sun = createSprite(250,250,5,5);
+   sun = createSprite(0,0,5,5);
   sun.addImage("sun",sun_image);
   sun.scale = 0.2;
   
-  mercury = createSprite(250,430,2,2);
+  mercury = createSprite(10,80,2,2);
   mercury.addImage("mercury",mercury_image);
   mercury.scale = 0.3;
   
-  venus = createSprite(80,300,5,5);
+  venus = createSprite(120,200,5,5);
   venus.addImage("venus",venus_image);
   venus.scale = 0.2;
   
-  earth = createSprite(180,110,5,5);
+  earth = createSprite(180,80,5,5);
   earth.addImage("earth",earth_image);
   earth.scale = 0.1;
   
-  mars = createSprite(380,125,5.5);
+  mars = createSprite(0,175,5.5);
   mars.addImage("mars",mars_image);
   mars.scale = 0.150
   
-  jupiter = createSprite(430,340,5,5);
+  jupiter = createSprite(245,0,5,5);
   jupiter.addImage("jupiter",jupiter_image);
   jupiter.scale = 0.4;
   
